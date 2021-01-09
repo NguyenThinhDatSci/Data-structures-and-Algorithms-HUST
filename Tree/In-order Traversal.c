@@ -38,8 +38,8 @@ Node* insertLast(Node* h, int v)
 		{
 			h->right = insertLast(h->right, v);
 		}
+		return h;
 	}
-	return h;
 }
 
 void printTree(Node *h)
