@@ -8,11 +8,13 @@ using namespace std;
 void nToBinary(int n)
 {
 	stack<short> st;
+	// put in stack
 	while (n > 0)
 	{
 		st.push(n % 2);
 		n /= 2;
 	}
+	// export stack
 	while (!st.empty())
 	{
 		cout << st.top();
@@ -23,6 +25,7 @@ void nToBinary(int n)
 int main()
 {
 	int n;
+	// fill in n as the number is greater than 0
 	do {
 		cin >> n;
 	} while (n <= 0);
