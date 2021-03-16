@@ -69,17 +69,17 @@ int valueAt_k(int k, Node* h)
 
 Node* deleteTheLargerNumber(int k, Node* h)
 {
-	int v = valueAt_k(k, h);
+	int v = valueAt_k(k, h); // value at position k is v
 	Node* p = h;
-	int index = -1;
+	int index = -1; // variable index is used for the deleteAt() funciton
 	while (p != NULL)
 	{
-		index++;
+		index++; // mark the index of p
 		if (p->value > v)
 		{
-			p = p->next;
-			h = deleteAt(index, h);
-			index--;
+			p = p->next; // because we will delete at this index, we have to move the position of p
+			h = deleteAt(index, h); // perform delete
+			index--; // The index of the next element is subtracted by 1
 		}
 		else
 			p = p->next;
