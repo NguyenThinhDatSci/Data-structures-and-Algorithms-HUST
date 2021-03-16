@@ -35,7 +35,12 @@ Node* input(int n, Node* h)
 
 Node* deleteAt(int k, Node* h)
 {
-	if (k == 0) return h->next;
+	if (k == 0)
+	{
+		Node* q = h->next;
+		free(h);
+		return q;
+	}
 	Node* p = h;
 	while (k > 1)
 	{
@@ -45,6 +50,7 @@ Node* deleteAt(int k, Node* h)
 	if (p == NULL) return h;
 	Node* q = p->next;
 	p->next = q->next;
+	free(q);
 	return h;
 }
 
