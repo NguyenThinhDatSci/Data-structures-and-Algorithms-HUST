@@ -17,17 +17,17 @@ Node* newNode(int v)
 	return q;
 }
 
-Node* insertLast(int v)
+Node* insertLast(int n, Node* h)
 {
-	Node* p = head;
-	Node* q = newNode(v);
-	if (head == NULL) return q;
+	Node* q = newNode(n);
+	if (h == NULL) return q;
+	Node* p = h;
 	while (p->next != NULL)
 	{
 		p = p->next;
 	}
 	p->next = q;
-	return head;
+	return h;
 }
 
 Node* insertAfter(Node* h, int u, int v)
@@ -227,7 +227,7 @@ void freeList()
 int main()
 {
 	for (int i = 1; i < 10; i++)
-		head = insertLast(i);
+		head = insertLast(i, head);
 	/*head = insertAfter(head, 1, 0);
 	head = insertAfterRecursive(head, 5, 0);
 	head = insertBefore(head, 3, 7);
